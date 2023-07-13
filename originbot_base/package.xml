@@ -15,7 +15,7 @@
   <depend>serial</depend>
   <depend>tf2_ros</depend>
   <depend>originbot_msgs</depend>
-  <depend>teleop-twist-keyboard</depend>
+  <depend>tros-teleop-twist-keyboard</depend>
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
