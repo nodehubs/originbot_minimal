@@ -71,12 +71,6 @@ def generate_launch_description():
         executable='static_transform_publisher', 
         emulate_tty=True,
         arguments="0.0 0.0 0.0 0.0 0.0 0.0 /base_link /imu_link".split(' '))
-    
-    map_tf = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher', 
-        emulate_tty=True,
-        arguments="0.0 0.0 0.0 0.0 0.0 0.0 /base_footprint /map".split(' '))
         
     return LaunchDescription([
         # use_sim_time_arg,
@@ -88,6 +82,5 @@ def generate_launch_description():
         pub_odom_arg,
         originbot_base_node,
         base_footprint_tf,
-        imu_tf,
-        map_tf
+        imu_tf
     ])

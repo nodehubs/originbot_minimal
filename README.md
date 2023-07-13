@@ -32,9 +32,12 @@ sudo apt install -y tros-originbot-base tros-serial tros-originbot-msgs
 
 ## 运行
 
-启动机器人，在终端中输入：
+### 启动机器人
+
+在终端中输入：
 
 ```bash
+source /opt/tros/setup.bash
 ros2 launch originbot_base robot.launch.py 
 ```
 运行成功后可看到如下提示
@@ -46,7 +49,6 @@ root@ubuntu:/userdata# ros2 launch originbot_base robot.launch.py
 [INFO] [static_transform_publisher-2]: process started with pid [6895]
 [INFO] [static_transform_publisher-3]: process started with pid [6897]
 [INFO] [static_transform_publisher-4]: process started with pid [6899]
-[static_transform_publisher-3] [INFO] [1688892599.334212820] [static_transform_publisher_DG4PtkgvqftyO7GF]: Spinning until killed publishing transform from '/base_footprint' to '/map'
 [originbot_base-1] Loading parameters:
 [originbot_base-1]              - port name: ttyS3
 [originbot_base-1]              - correct factor vx: 0.8980
@@ -59,6 +61,46 @@ root@ubuntu:/userdata# ros2 launch originbot_base robot.launch.py
 [originbot_base-1] [INFO] [1688892599.919219715] [originbot_base]: OriginBot Start, enjoy it.
 
 ```
+
+### 键盘控制机器人
+
+在另一个终端中运行如下指令打开键盘控制功能：
+
+```bash
+source /opt/tros/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
+运行成功后出现以下提示
+```bash
+This node takes keypresses from the keyboard and publishes them
+as Twist messages. It works best with a US keyboard layout.
+---------------------------
+Moving around:
+   u    i    o
+   j    k    l
+   m    ,    .
+
+For Holonomic mode (strafing), hold down the shift key:
+---------------------------
+   U    I    O
+   J    K    L
+   M    <    >
+
+t : up (+z)
+b : down (-z)
+
+anything else : stop
+
+q/z : increase/decrease max speeds by 10%
+w/x : increase/decrease only linear speed by 10%
+e/c : increase/decrease only angular speed by 10%
+
+CTRL-C to quit
+
+currently:      speed 0.5       turn 1.0
+ 
+```
+根据提示即可适用键盘控制机器人运动。
 
 # 接口说明
 ## 话题
