@@ -17,7 +17,7 @@ OriginBot是一款智能机器人开源套件，更是一个社区共建的开�
 
 ## 准备工作
 
-参考机器人官网的[使用指引](https://www.originbot.org/guide/quick_guide/)，完成机器人的硬件组装。
+参考OriginBot机器人官网的[使用指引](https://www.originbot.org/guide/quick_guide/)，完成机器人的硬件组装。
 
 ## 安装 
 
@@ -40,7 +40,9 @@ sudo apt install -y tros-originbot-base tros-serial tros-originbot-msgs
 source /opt/tros/setup.bash
 ros2 launch originbot_base robot.launch.py 
 ```
+
 运行成功后可看到如下提示
+
 ```shell
 root@ubuntu:/userdata# ros2 launch originbot_base robot.launch.py
 [INFO] [launch]: All log files can be found below /root/.ros/log/2023-07-09-16-49-58-754723-ubuntu-6891
@@ -70,7 +72,9 @@ root@ubuntu:/userdata# ros2 launch originbot_base robot.launch.py
 source /opt/tros/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
+
 运行成功后出现以下提示
+
 ```bash
 This node takes keypresses from the keyboard and publishes them
 as Twist messages. It works best with a US keyboard layout.
@@ -98,9 +102,9 @@ e/c : increase/decrease only angular speed by 10%
 CTRL-C to quit
 
 currently:      speed 0.5       turn 1.0
- 
 ```
-根据提示即可适用键盘控制机器人运动。
+
+根据提示使用键盘对应按键控制机器人运动。
 
 # 接口说明
 ## 话题
