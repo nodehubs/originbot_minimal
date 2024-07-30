@@ -25,12 +25,16 @@ OriginBot是一款智能机器人开源套件，更是一个社区共建的开�
 
 点击[NodeHub OriginBot项目](http://it-dev.horizon.ai/nodehubDetail/170117036053371431)右上角快速部署，通过终端或者VNC连接机器人，复制如下命令在RDK的系统上运行，完成人OriginBot机器人最小系统安装。
 
+tros foxy 版本 
 ```bash
 sudo apt update
 sudo apt install -y tros-originbot-base tros-serial tros-originbot-msgs
 ```
-
-
+tros humble 版本
+```bash
+sudo apt update
+sudo apt install -y tros-humble-originbot-base tros-humble-serial tros-humble-originbot-msgs
+```
 
 ## 运行
 
@@ -38,8 +42,14 @@ sudo apt install -y tros-originbot-base tros-serial tros-originbot-msgs
 
 在终端中输入：
 
+tros foxy 版本
 ```bash
 source /opt/tros/setup.bash
+ros2 launch originbot_base robot.launch.py 
+```
+tros humble 版本
+```bash
+source /opt/tros/humble/setup.bash
 ros2 launch originbot_base robot.launch.py 
 ```
 
@@ -70,9 +80,15 @@ root@ubuntu:/userdata# ros2 launch originbot_base robot.launch.py
 
 在另一个终端中运行如下指令打开键盘控制功能：
 
+tros foxy 版本
 ```bash
 source /opt/tros/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
+tros humble 版本
+```bash
+source /opt/tros/humble/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 运行成功后出现以下提示

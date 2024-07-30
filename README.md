@@ -25,12 +25,16 @@ Refer to the [user guide](https://www.originbot.org/guide/quick_guide/) on Origi
 
 Click on the upper right corner of the [NodeHub OriginBot project](http://it-dev.horizon.ai/nodehubDetail/170117036053371431) for fast deployment, connect to the robot through terminal or VNC, copy and run the following commands on the RDK system to install the minimal system of OriginBot robot.
 
+tros foxy: 
 ```bash
 sudo apt update
 sudo apt install -y tros-originbot-base tros-serial tros-originbot-msgs
 ```
-
-
+tros humble:
+```bash
+sudo apt update
+sudo apt install -y tros-humble-originbot-base tros-humble-serial tros-humble-originbot-msgs
+```
 
 ## Operation
 
@@ -38,8 +42,14 @@ sudo apt install -y tros-originbot-base tros-serial tros-originbot-msgs
 
 Enter the following command in the terminal:
 
+tros foxy:
 ```bash
 source /opt/tros/setup.bash
+ros2 launch originbot_base robot.launch.py 
+```
+tros humble:
+```bash
+source /opt/tros/humble/setup.bash
 ros2 launch originbot_base robot.launch.py 
 ```
 
@@ -70,9 +80,15 @@ root@ubuntu:/userdata# ros2 launch originbot_base robot.launch.py
 
 Run the following command in another terminal to enable keyboard control:
 
+tros foxy:
 ```bash
 source /opt/tros/setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
+tros humble:
+```bash
+source /opt/tros/humble/setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 After successful execution, the following prompts will appear:
